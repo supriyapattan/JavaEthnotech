@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Both Centering Tasks</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+        }
+
+        /* -------- Task 1 -------- */
+        .horizontal-box {
+            width: 300px;
+            height: 150px;
+            background-color: lightblue;
+
+            margin: 50px auto; /* horizontal center */
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 10px;
+            font-weight: bold;
+        }
+
+        /* -------- Task 2 -------- */
+        .container {
+            height: 100vh;
+            display: flex;
+
+            justify-content: center; /* horizontal */
+            align-items: center;     /* vertical */
+
+            background-color: #f0f4f8;
+        }
+
+        .center-box {
+            width: 300px;
+            height: 150px;
+            background-color: #4CAF50;
+            color: white;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Task 1 Output -->
+<div class="horizontal-box">
+    Horizontally Centered Box
+</div>
+
+<!-- Task 2 Output -->
+<div class="container">
+    <div class="center-box">
+        Fully Centered Box
+    </div>
+</div>
+
+</body>
+</html>

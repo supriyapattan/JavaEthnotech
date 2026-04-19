@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>College Event Registration</title>
+
+    <script>
+        function showSummary() {
+            let selected = [];
+            let events = document.querySelectorAll('input[name="event"]:checked');
+
+            events.forEach(function(e) {
+                selected.push(e.value);
+            });
+
+            document.getElementById("summary").innerHTML =
+                "Selected Events: " + (selected.length ? selected.join(", ") : "None");
+        }
+    </script>
+
+</head>
+<body>
+
+<h1>College Event Registration</h1>
+
+<!-- Audio Section -->
+<h3>Listen to Event Invitation</h3>
+<audio controls>
+    <source src="sample.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+<hr>
+
+<form onsubmit="showSummary()">
+
+    <!-- Name -->
+    <label for="sname">Student Name:</label>
+    <input type="text" id="sname" name="sname" required>
+    <br><br>
+
+    <!-- Email -->
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email"
+    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+    required>
+    <br><br>
+
+    <!-- Department -->
+    <label for="dept">Department:</label>
+    <input type="text" id="dept" name="dept" required>
+    <br><br>
+
+    <!-- Events -->
+    <label>Event Selection:</label><br>
+    <input type="checkbox" name="event" value="Dance"> Dance<br>
+    <input type="checkbox" name="event" value="Coding"> Coding<br>
+    <input type="checkbox" name="event" value="Singing"> Singing
+    <br><br>
+
+    <!-- File Upload -->
+    <label for="file">Upload Performance Sample:</label>
+    <input type="file" id="file" accept=".mp3, .mp4" required>
+    <br><br>
+
+    <!-- Buttons -->
+    <input type="submit" value="Register">
+    <input type="reset" value="Reset">
+
+</form>
+
+<br>
+
+<!-- Summary Output -->
+<p id="summary"></p>
+
+</body>
+</html>
